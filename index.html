@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudNote Lite</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="spinner"></div>
+    <p>Memuat CloudNote Lite...</p>
+  </div>
+
+  <!-- Login Page -->
+  <div id="login-page" class="page active">
+    <h1>CloudNote Lite</h1>
+    <form id="login-form">
+      <input type="text" id="roomName" placeholder="Nama Ruang" required>
+      <input type="password" id="roomPin" placeholder="PIN" required>
+      <button type="submit">Masuk</button>
+    </form>
+    <div id="login-message"></div>
+  </div>
+
+  <!-- Dashboard Page -->
+  <div id="dashboard-page" class="page">
+    <header>
+      <h2 id="room-title"></h2>
+      <button id="logout-btn">Logout</button>
+    </header>
+
+    <div class="controls">
+      <button id="add-note-btn">Tambah Catatan</button>
+      <input type="text" id="search-box" placeholder="Cari catatan...">
+    </div>
+
+    <ul id="notes-list"></ul>
+  </div>
+
+  <!-- Modal Tambah/Edit Catatan -->
+  <div id="note-modal" class="modal">
+    <div class="modal-content">
+      <h3 id="modal-title">Tambah Catatan</h3>
+      <form id="note-form">
+        <input type="text" id="note-title" placeholder="Judul" required>
+        <textarea id="note-content" placeholder="Isi catatan..." required></textarea>
+        <button type="submit">Simpan</button>
+        <button type="button" id="cancel-btn">Batal</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast"></div>
+
+  <script src="firebase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
